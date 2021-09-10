@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Test Extension",
+    "version": "1.0.0",
+    "description": "Developer Test Extension",
+    "browser_action": {
+      "default_title": "Test Extension"
+    },
+    "icons": {
+      "16": "images/16.png"
+    },
+    "permissions": [],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.vinted.co.uk/member/59783356-lessthanten/*"],
+            "js": ["content-scripts/getProducts.js"]
+        },
+        {
+          "matches": ["*://*.vinted.co.uk/member/66773264-perfectvintage?tab=feedback"],
+          "js": ["content-scripts/getFeedback.js"]
+      },
+      {
+        "matches": ["*://*.vinted.co.uk/items/new"],
+        "js": ["content-scripts/fillProduct.js"]
+    }
+    ]
+  }
