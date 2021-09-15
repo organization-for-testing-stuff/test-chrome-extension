@@ -7,9 +7,9 @@ const getProducts = async () => {
     Accept: "*/*",
     "User-Agent": "www.vinted.co.uk",
   };
-
+  // page=1&per_page=82&
   fetch(
-    "https://www.vinted.co.uk/api/v2/users/59783356/items?page=1&per_page=20&order=relevance¤cy=GBP",
+    "https://www.vinted.co.uk/api/v2/users/59783356/items?order=relevance¤cy=GBP",
     {
       method: "GET",
       headers: headersList,
@@ -19,8 +19,8 @@ const getProducts = async () => {
       return response.text();
     })
     .then(function (data) {
-      //   console.log(Object.keys(data.items).length);
-      console.log(data.items);
+      const TheData = JSON.parse(data);
+      console.log(TheData);
     });
 };
 
