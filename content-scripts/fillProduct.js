@@ -8,14 +8,10 @@ const product = {
 
 const fillProduct = async () => {
   //Fills form
-  var title = document.getElementById("title");
-  var input = title.getElementsByTagName("input")[0];
-  input.value = product.title;
 
-  document.getElementById("description").innerHTML = product.description;
-
-  document.getElementById("price").innerHTML = product.price;
-  document.getElementById("price").value = product.price;
+  document.getElementById("title").defaultValue = product.title;
+  document.getElementById("description").defaultValue = product.description;
+  document.getElementById("price").value = "£" + product.price + ".00";
 };
 
 //Please catch any errors

@@ -18,7 +18,7 @@ const getFeedback = async () => {
     })
     .then(function (data) {
       const TheData = JSON.parse(data);
-      var DataArray = [TheData.user_feedbacks]; // This array contains all the items sold by the user.
+      var DataArray = [TheData.user_feedbacks]; // This array contains all the feedback recevied by the person.
       console.log(DataArray);
       // console.log(TheData);
     });
