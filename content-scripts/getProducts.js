@@ -1,5 +1,5 @@
 console.log("RUNNING GETPRODUCTS SCRIPT");
-
+// lessthanten
 const getProducts = async () => {
   //Returns array of product objects
   console.log("inside function");
@@ -7,9 +7,8 @@ const getProducts = async () => {
     Accept: "*/*",
     "User-Agent": "www.vinted.co.uk",
   };
-  // page=1&per_page=82&
   fetch(
-    "https://www.vinted.co.uk/api/v2/users/59783356/items?order=relevance¤cy=GBP",
+    "https://www.vinted.co.uk/api/v2/users/59783356/items?per_page=82&order=relevance¤cy=GBP",
     {
       method: "GET",
       headers: headersList,
@@ -20,7 +19,9 @@ const getProducts = async () => {
     })
     .then(function (data) {
       const TheData = JSON.parse(data);
-      console.log(TheData);
+      var DataArray = [TheData.items]; // This array contains all the items sold by the user.
+      console.log(DataArray);
+      // console.log(TheData);
     });
 };
 
